@@ -4,7 +4,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['DM Mono', 'san-serif'],
+    },
+    extend: {
+      colors: {
+        'dark': '#2D2E32',
+        'darker': '#25262A'
+      },
+      fontFamily: {
+        'cursive': ['Pacifico'],
+      },
+    },
   },
   plugins: [],
 }
