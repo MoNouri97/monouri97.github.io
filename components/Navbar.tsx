@@ -1,8 +1,8 @@
-import { Disclosure } from '@headlessui/react'
-import React from 'react'
-import { FiMail, FiMenu, FiX } from 'react-icons/fi'
+import { Disclosure } from '@headlessui/react';
+import React from 'react';
+import { FiMail, FiMenu, FiX } from 'react-icons/fi';
 
-type NavbarProps = {}
+type NavbarProps = {};
 
 const links = [
   { label: 'About', link: '#', current: true },
@@ -10,10 +10,10 @@ const links = [
   { label: 'Experience', link: '#' },
   { label: 'Projects', link: '#' },
   { label: 'Contact', link: '#' },
-]
+];
 const classNames = (...classes: string[]) => {
-  return classes.filter(Boolean).join(' ')
-}
+  return classes.filter(Boolean).join(' ');
+};
 const Navbar: React.FC<NavbarProps> = ({}) => {
   return (
     <Disclosure as="nav" className="w-full">
@@ -94,8 +94,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
         </>
       )}
     </Disclosure>
-  )
-}
+  );
+};
 // const Navbar: React.FC<NavbarProps> = ({}) => {
 //   return (
 //     <nav className="flex w-4/5 flex-wrap items-center justify-start py-4 ">
@@ -118,4 +118,4 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
 //     </nav>
 //   )
 // }
-export default Navbar
+export default Navbar;

@@ -5,17 +5,17 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['DM Mono', 'san-serif'],
+      sans: ['DM Mono', 'san-serif'],
     },
     extend: {
       colors: {
-        'dark': '#2D2E32',
-        'darker': '#25262A'
+        dark: '#2D2E32',
+        darker: '#25262A',
       },
       fontFamily: {
-        'cursive': ['Pacifico'],
+        cursive: ['Pacifico'],
       },
     },
   },
   plugins: [],
-}
+};
