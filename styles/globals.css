@@ -4,12 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: all .1s ease-in-out
+}
 @layer components {
   .flex-center {
     @apply flex items-center justify-center;
   }
   a.active {
-    @apply text-green-500;
+    @apply dark:text-green-500 text-green-700;
   }
   a.active::after {
     content: ' />';

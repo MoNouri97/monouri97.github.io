@@ -1,6 +1,8 @@
 import { Disclosure } from '@headlessui/react';
 import React from 'react';
 import { FiMail, FiMenu, FiX } from 'react-icons/fi';
+import DarkModeButton from './DarkModeButton';
+import IconButton from './IconButton';
 
 type NavbarProps = {};
 
@@ -19,11 +21,11 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     <Disclosure as="nav" className="w-full">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl bg-dark px-2 md:px-6 lg:px-8">
+          <div className="mx-auto max-w-[90rem] px-2 md:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="dar:text-gray-400 inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <FiX className="block h-6 w-6" aria-hidden="true" />
@@ -35,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <h1 className="-ml-16 font-cursive text-xl sm:ml-0">
-                    Nouri Mohamed
+                    Nouri <span className="hidden sm:inline"> Mohamed </span>
                   </h1>
                 </div>
                 <div className="hidden md:ml-6 md:block">
@@ -47,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         className={classNames(
                           item.current
                             ? 'active'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            : 'hover:bg-gray-700 hover:text-white dark:text-gray-300',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -60,12 +62,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <ul className="flex  items-center justify-end gap-2">
-                  <li className="rounded-xl bg-stone-900 py-2 px-4 text-green-500">
-                    Get CV
-                  </li>
-                  <li className="flex-center h-11 w-11 rounded-full bg-stone-900 text-center text-green-500">
-                    <FiMail size={20} />
-                  </li>
+                  <IconButton>Get CV</IconButton>
+                  <IconButton icon={<FiMail size={20} />} />
+                  <DarkModeButton />
                 </ul>
               </div>
             </div>
@@ -80,8 +79,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                   href={item.link}
                   className={classNames(
                     item.current
-                      ? 'active bg-gray-900'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      ? 'active dark:bg-gray-900'
+                      : 'hover:bg-gray-700 hover:text-white dark:text-gray-300',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
