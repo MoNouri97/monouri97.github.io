@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
   return (
     <Disclosure
       as="nav"
-      className={`sticky top-0 w-full duration-200 ${
+      className={`sticky top-0 z-[99] w-full duration-200 ${
         isTop ? '' : 'bg-slate-300 shadow dark:bg-darker'
       }`}
     >

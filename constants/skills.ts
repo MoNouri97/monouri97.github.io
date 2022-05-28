@@ -7,7 +7,7 @@ export default [
   },
   {
     title: 'Back End',
-    sub: 'Nodejs, Golang, SQL, laravel , Spring Boot ...',
+    sub: 'Nodejs, MongoDB, Golang, SQL, laravel , Spring Boot ...',
   },
   {
     title: 'DevOps',

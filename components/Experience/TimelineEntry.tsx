@@ -1,51 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiCalendar } from 'react-icons/fi';
 
-type TimelineEntryProps = {
+export type TimelineEntryProps = {
   date: string;
   title: string;
   desc: string;
+  details: string;
   isRight?: boolean;
+  margin?: 'mt-8' | 'mt-24' | 'mt-96';
 };
 
 const TimelineEntry: React.FC<TimelineEntryProps> = ({
   date,
   desc,
   title,
+  details,
   isRight = false,
+  margin = 'mt-8',
 }) => {
+  const [hover, setHover] = useState(false);
   return (
     <li>
       <div
-        className={`flex-end mt-2 lg:flex ${
+        className={`flex-end ${margin} lg:flex ${
           isRight ? 'flex-row-reverse' : 'flex-row-reverse lg:flex-row'
         }`}
       >
         <div
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
           className={`max-w-md rounded bg-slate-200 p-8 shadow-black transition-all  hover:-translate-y-1 hover:shadow-xl dark:bg-dark ${
             !isRight ? 'ml-6 lg:mr-6' : 'ml-6'
           }`}
         >
           <div className="mb-4 flex justify-between">
-            <a
-              href="#!"
-              className="text-sm font-medium text-green-500 transition duration-300 ease-in-out hover:text-purple-700 focus:text-purple-800"
-            >
+            <p className="text-sm font-medium text-green-500 transition duration-300 ease-in-out">
               {title}
-            </a>
-            <a
-              href="#!"
-              className="text-sm font-medium text-green-500 transition duration-300 ease-in-out hover:text-purple-700 focus:text-purple-800"
-            >
+            </p>
+            <p className="text-sm font-medium text-green-500 transition duration-300 ease-in-out">
               {date}
-            </a>
+            </p>
           </div>
-          <p className="mb-6 text-gray-700 dark:text-gray-200">{desc}</p>
+          {desc.split('.').map(parg => (
+            <p className="mb-6 text-gray-700 dark:text-gray-200">{parg}</p>
+          ))}
+          <div className="flex flex-wrap">
+            {details.split(';').map(dt => (
+              <span className="m-1 rounded bg-slate-300 p-2 text-sm dark:bg-darker">
+                {dt.trim()}
+              </span>
+            ))}
+          </div>
         </div>
         <div
-          className={`z-50 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 ${
-            !isRight ? '-ml-3 lg:-mr-3 ' : '-ml-3 '
-          }`}
+          className={`z-50 flex h-6 w-6 items-center justify-center rounded-full ${
+            hover ? 'bg-green-500' : 'bg-slate-200 dark:bg-dark'
+          } ${!isRight ? '-ml-3 lg:-mr-3 ' : '-ml-3 '}`}
         >
           <FiCalendar />
         </div>

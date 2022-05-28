@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../Title';
 import Timeline from './Timeline';
 
 type ExperienceProps = {};
@@ -6,11 +7,11 @@ type ExperienceProps = {};
 const Experience: React.FC<ExperienceProps> = ({}) => {
   return (
     <section
-      id="skills"
-      className="flex-center flex min-h-[100vh] w-full bg-slate-300 dark:bg-darker"
+      id="experience"
+      className="flex w-full flex-wrap bg-slate-300 pt-8 dark:bg-darker"
     >
-      <div className="flex w-full max-w-7xl flex-wrap justify-center sm:py-10 sm:px-20">
-        <h1 className="w-full p-8">hello from Experience</h1>
+      <Title>Experience</Title>
+      <div className="mx-auto flex w-full max-w-7xl flex-wrap justify-center sm:py-10 sm:px-20">
         <Timeline />
       </div>
     </section>
