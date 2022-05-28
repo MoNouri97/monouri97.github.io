@@ -7,6 +7,9 @@
 * {
   transition: all .1s ease-in-out
 }
+html {
+  scroll-behavior: smooth;
+}
 @layer components {
   .flex-center {
     @apply flex items-center justify-center;
@@ -19,5 +22,8 @@
   }
   a.active::before {
     content: '< ';
+  }
+  .text-gray-500 em {
+    @apply dark:text-white text-black not-italic;
   }
 }

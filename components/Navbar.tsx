@@ -1,24 +1,32 @@
 import { Disclosure } from '@headlessui/react';
 import React from 'react';
 import { FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { useScrollPosition } from '../util/useScrollPosition';
 import DarkModeButton from './DarkModeButton';
 import IconButton from './IconButton';
 
 type NavbarProps = {};
 
 const links = [
-  { label: 'About', link: '#', current: true },
-  { label: 'Skills', link: '#' },
-  { label: 'Experience', link: '#' },
-  { label: 'Projects', link: '#' },
-  { label: 'Contact', link: '#' },
+  { label: 'About', link: '#about', current: true },
+  { label: 'Skills', link: '#skills' },
+  { label: 'Experience', link: '#experience' },
+  { label: 'Projects', link: '#projects' },
+  { label: 'Contact', link: '#contact' },
 ];
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
 const Navbar: React.FC<NavbarProps> = ({}) => {
+  const isTop = useScrollPosition();
+
   return (
-    <Disclosure as="nav" className="w-full">
+    <Disclosure
+      as="nav"
+      className={`sticky top-0 w-full duration-200 ${
+        isTop ? '' : 'bg-slate-300 shadow dark:bg-darker'
+      }`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-[90rem] px-2 md:px-6 lg:px-8">
@@ -95,26 +103,4 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     </Disclosure>
   );
 };
-// const Navbar: React.FC<NavbarProps> = ({}) => {
-//   return (
-//     <nav className="flex w-4/5 flex-wrap items-center justify-start py-4 ">
-//       <div className="flex w-1/2 justify-between">
-//         <h1 className="font-cursive text-xl">Nouri Mohamed</h1>
-//         <ul className="flex flex-wrap gap-6 ">
-//           {links.map(l => (
-//             <li className={l.label == 'About' ? 'active' : ''}>{l.label}</li>
-//           ))}
-//         </ul>
-//       </div>
-//       <ul className="flex w-1/2 items-center justify-end gap-2">
-//         <li className="rounded-xl bg-stone-900 py-2 px-4 text-green-500">
-//           Get CV
-//         </li>
-//         <li className="flex-center h-11 w-11 rounded-full bg-stone-900 text-center text-green-500">
-//           <FiMail size={20} />
-//         </li>
-//       </ul>
-//     </nav>
-//   )
-// }
 export default Navbar;
