@@ -30,7 +30,7 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           className={`max-w-md rounded bg-slate-200 p-8 shadow-black transition-all  hover:-translate-y-1 hover:shadow-xl dark:bg-dark ${
-            !isRight ? 'ml-6 lg:mr-6' : 'ml-6'
+            !isRight ? 'ml-2 lg:mr-6' : 'ml-2 md:ml-6'
           }`}
         >
           <div className="mb-4 flex justify-between">

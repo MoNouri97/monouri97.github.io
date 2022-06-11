@@ -14,7 +14,7 @@ const Timeline: React.FC<TimelineProps> = ({}) => {
             <TimelineEntry key={ex.title} {...ex} />
           ))}
       </ol>
-      <ol className="border-l-2 border-gray-500 pt-24">
+      <ol className="border-l-2 border-gray-500 sm:pt-24">
         {experiences
           .filter((_, i) => i % 2 != 0)
           .map(ex => (
