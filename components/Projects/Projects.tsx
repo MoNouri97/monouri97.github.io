@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import PROJECTS from '../../constants/PROJECTS';
 import Title from '../Title';
 import Project from './Project';
 
@@ -20,14 +21,15 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
         onClick={() => setExpanded(undefined)}
       ></motion.div>
       <div className="flex w-full max-w-7xl flex-wrap gap-8">
-        {Array(6)
-          .fill(0)
-          .map((p, i) => (
-            <Project
-              isExpanded={i == expanded}
-              onExpand={() => setExpanded(i)}
-            />
-          ))}
+        {PROJECTS.map((p, i) => (
+          <Project
+            {...p}
+            isExpanded={i == expanded}
+            onExpand={() => {
+              i == expanded ? setExpanded(undefined) : setExpanded(i);
+            }}
+          />
+        ))}
       </div>
     </section>
   );

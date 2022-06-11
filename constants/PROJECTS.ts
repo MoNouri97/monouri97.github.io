@@ -1,6 +1,8 @@
+import { ProjectData } from '../components/Projects/Project';
+
 export default [
   {
-    title: 'Pharmatek: pharmaceutical Drug and medicine manager',
+    title: 'Pharmatek: medicine manager',
     description: `pharmaceutical Drug and medicine manager, using the MERN stack.
 		The backend is a REST API using Node & ExpressJS and Secured with JWTs, Powered by MongoDB database and the mongoose ORM.
 		The API consited of multiple endpoints to manipulate diverse objects (drugs, doctors, pharmacies, patients, ...).
@@ -26,10 +28,6 @@ export default [
   {
     title: 'Merchandising: App & Dashboard',
     description: `The app was coded in typescript using React Native and featured a lot of intersting components such as a map & geolocation fencing system using Google Maps api and dynamic form that can be used to generate a report which presented a lot of challenges and contained multiple types of inputs (text, numbers, images & files, toggles and check lists).`,
-    tags: 'ReactNative;React-query;Formik;typescript;Google Maps;',
+    tags: 'ReactNative;React-query;Formik;typescript;Google Maps',
   },
-] as {
-  title: string;
-  description: string;
-  tags: string;
-}[];
+] as ProjectData[];
