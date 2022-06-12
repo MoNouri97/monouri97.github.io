@@ -21,6 +21,12 @@ export default [
     tags: 'GameDev;Godot;GDScript;',
   },
   {
+    title: 'ISSAT Times : schedule App',
+    description: `Students app for ISSATso university students to check their lectures and courses, coded using TS and ReactNative,
+    due to missing API to interact with the time/schedule system the data is gathered using webscraping technique in the background when choosing your study group`,
+    tags: 'ReactNative;React-query;Formik;typescript;Google Maps',
+  },
+  {
     title: 'NotReddit: A reddit clone using GraphQL',
     description: `this project was split into two parts a backend using Node,Express and TypeORM And a frontend using NextJs and the Urql Client. the entire project was coded in typescript and was my intro to GraphQL , the end product was a solid foundation that could've been expanded into a fully functional socail media platform (but we have enough of those already)`,
     tags: 'GraphQL;NextJs;Typescript;Node;TypeORM;URQLClient;caching;Redis;docker;docker-compose',
