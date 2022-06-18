@@ -78,8 +78,25 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <ul className="flex  items-center justify-end gap-2">
-                  <IconButton>Get CV</IconButton>
-                  <IconButton icon={<FiMail size={20} />} />
+                  <IconButton
+                    onClick={() =>
+                      window.open(
+                        'https://drive.google.com/file/d/1r0tZ1QITfDBF-7DsbyusX5dcod5WaaXv/view',
+                        '_blank'
+                      )
+                    }
+                  >
+                    Get CV
+                  </IconButton>
+                  <IconButton
+                    icon={<FiMail size={20} />}
+                    onClick={() =>
+                      window.open(
+                        'mailto:mohamed.nouri.1997@gmail.com',
+                        '_blank'
+                      )
+                    }
+                  />
                   <DarkModeButton />
                 </ul>
               </div>
