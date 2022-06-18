@@ -1,24 +1,32 @@
 import { Disclosure } from '@headlessui/react';
-import React from 'react';
+import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import { FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { useOnScreen } from '../util/useOnScreen';
 import { useScrollPosition } from '../util/useScrollPosition';
 import DarkModeButton from './DarkModeButton';
 import IconButton from './IconButton';
 
 type NavbarProps = {};
 
-const links = [
-  { label: 'About', link: '#about', current: true },
-  { label: 'Skills', link: '#skills' },
-  { label: 'Experience', link: '#experience' },
-  { label: 'Projects', link: '#projects' },
-  { label: 'Contact', link: '#contact' },
-];
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
 const Navbar: React.FC<NavbarProps> = ({}) => {
+  const [links, setLinks] = useState([
+    { label: 'About', link: '#about', current: true },
+    { label: 'Skills', link: '#skills' },
+    { label: 'Experience', link: '#experience' },
+    { label: 'Projects', link: '#projects' },
+    { label: 'Contact', link: '#contact' },
+  ]);
   const isTop = useScrollPosition();
+  const isIntersecting = useOnScreen(links.map(l => l.link.slice(1)));
+  useEffect(() => {
+    setLinks(
+      links.map(l => ({ ...l, current: l.link === `#${isIntersecting}` }))
+    );
+  }, [isIntersecting]);
 
   return (
     <Disclosure
@@ -51,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                 <div className="hidden md:ml-6 md:block">
                   <div className="flex flex-wrap space-x-4">
                     {links.map(item => (
-                      <a
+                      <motion.a
                         key={item.label}
                         href={item.link}
                         className={classNames(
@@ -63,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.label}
-                      </a>
+                      </motion.a>
                     ))}
                   </div>
                 </div>
@@ -86,9 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                   as="a"
                   href={item.link}
                   className={classNames(
-                    item.current
-                      ? 'active dark:bg-gray-900'
-                      : 'hover:bg-gray-700 hover:text-white dark:text-gray-300',
+                    'hover:bg-gray-700 hover:text-white dark:text-gray-300',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

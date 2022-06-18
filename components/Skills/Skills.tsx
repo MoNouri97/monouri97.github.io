@@ -7,7 +7,7 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="flex-center flex h-[100vh] w-full flex-wrap bg-slate-300 dark:bg-darker"
+      className="flex-center flex  w-full flex-wrap bg-slate-300 dark:bg-darker"
     >
       <Title>Sills</Title>
       <div className="flex w-full max-w-7xl flex-wrap justify-evenly sm:py-10 sm:px-20">

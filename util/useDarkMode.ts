@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export const useDarkMode = () => {
   const [enabledState, setEnabledState] = useState(true);
   useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    // On page load or when changing themes
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&

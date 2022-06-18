@@ -22,9 +22,9 @@ const FloatingCircle: React.FC<FloatingCircleProps> = ({
         repeat: Infinity,
         duration: 1,
       }}
-      animate={{
-        translateY: Math.random() * 100,
-      }}
+      // animate={{
+      //   translateY: Math.random() * 100,
+      // }}
       style={{
         top,
         right,

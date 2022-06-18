@@ -4,7 +4,7 @@ type AboutTextProps = {};
 
 const AboutText: React.FC<AboutTextProps> = ({}) => {
   return (
-    <div className="order-2 w-full px-4 sm:order-none sm:w-1/3">
+    <div className="order-2 w-full flex-grow px-4 sm:order-none sm:w-1/3 2xl:flex-grow-0">
       <span className="my-2 inline-block rounded-lg bg-green-500 px-4 py-1 text-white">
         Web Developer
       </span>

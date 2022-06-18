@@ -9,6 +9,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 @layer components {
   .flex-center {

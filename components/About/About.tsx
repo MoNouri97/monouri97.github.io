@@ -1,39 +1,52 @@
-import Image from 'next/image';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import React from 'react';
+import { Parallax } from 'react-scroll-parallax';
 import AboutText from './AboutText';
-import FloatingCircle from './FloatingCircle';
 
 type AboutProps = {};
 
 const About: React.FC<AboutProps> = ({}) => {
+  const x = useMotionValue(Math.random() * 200 - 100);
+  const y = useMotionValue(Math.random() * 200 - 100);
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+
   return (
     <main
       id="about"
       className="flex-center flex min-h-[100vh] w-full flex-wrap sm:py-10 sm:px-20"
     >
       <AboutText />
-      <div className="relative w-[888px]">
-        <FloatingCircle
-          right={150}
-          top={50}
-          scale={0.5}
-          logo="/img/ts-logo.png"
+      <motion.div
+        animate={{ x: 0, y: 0 }}
+        transition={{ type: 'spring' }}
+        className="relative w-[500px] cursor-grab"
+        style={{ x, y }}
+        drag
+        dragElastic={0.06}
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+        whileTap={{ cursor: 'grabbing' }}
+      >
+        <Parallax speed={-10}>
+          <img src={'/img/BG.png'} className="pointer-events-none" />
+        </Parallax>
+        <motion.img
+          style={{
+            x,
+            y,
+            rotateX,
+            rotateY,
+            z: 100000,
+          }}
+          className="pointer-events-none absolute top-0 -left-10"
+          src={'/img/FG.png'}
         />
-        <FloatingCircle
-          right={400}
-          top={70}
-          scale={0.8}
-          logo="/img/ts-logo.png"
-        />
-        <FloatingCircle right={500} top={200} logo="/img/ts-logo.png" />
-        <FloatingCircle
-          right={300}
-          top={300}
-          scale={2}
-          logo="/img/ts-logo.png"
-        />
-        <Image width={888} height={888} src={'/img/Saly-13.png'} />
-      </div>
+      </motion.div>
     </main>
   );
 };
