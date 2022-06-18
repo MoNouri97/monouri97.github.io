@@ -21,10 +21,13 @@ const AboutText: React.FC<AboutTextProps> = ({}) => {
         <br />I am also very interested in web development especially the
         amazing and ever expanding world of{' '}
         <span className="text-black dark:text-white"> JavaScript </span>
-        <h1 className="my-8 border-l-4 border-green-500 px-4  text-xl text-green-500">
-          LET'S CHAT
-        </h1>
       </p>
+      <a
+        href="#contact"
+        className="chatBtn my-8 inline-block px-4 text-xl text-green-500 dark:bg-darker"
+      >
+        LET'S CHAT
+      </a>
     </div>
   );
 };

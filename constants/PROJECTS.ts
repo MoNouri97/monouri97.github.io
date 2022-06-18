@@ -2,11 +2,11 @@ import { ProjectData } from '../components/Projects/Project';
 
 const PROJECTS: ProjectData[] = [
   {
-    title: 'Pharmatek: medicine manager',
+    title: 'Pharmatek: pharmaceutical manager',
     description: `pharmaceutical Drug and medicine manager, using the MERN stack.
 		The backend is a REST API using Node & ExpressJS and Secured with JWTs, Powered by MongoDB database and the mongoose ORM.
 		The API consited of multiple endpoints to manipulate diverse objects (drugs, doctors, pharmacies, patients, ...).
-		While the frontend was a dashboard coded in React`,
+		And last but not least the frontend was a dashboard coded in React`,
     tags: 'ReactJs;Nodejs;Express;MongoDB;Mongoose;JWT;Mocha & Chai;TDD;GitlabCI',
     links: [
       {
@@ -47,7 +47,7 @@ const PROJECTS: ProjectData[] = [
     ],
   },
   {
-    title: 'ISSAT Times : schedule App',
+    title: 'ISSAT Times : Schedule App',
     description: `Students app for ISSATso university students to check their lectures and courses, coded using TS and ReactNative,
     due to missing API to interact with the time/schedule system the data is gathered using webscraping technique in the background when choosing your study group`,
     tags: 'ReactNative;React-query;Formik;Typescript;Google Maps',
@@ -79,7 +79,7 @@ const PROJECTS: ProjectData[] = [
   },
   {
     title: 'Merchandising: App & Dashboard',
-    description: `The app was coded in typescript using React Native and featured a lot of intersting components such as a map & geolocation fencing system using Google Maps api and dynamic form that can be used to generate a report which presented a lot of challenges and contained multiple types of inputs (text, numbers, images & files, toggles and check lists).`,
+    description: `The app was coded in typescript using React Native and featured a lot of intersting components such as a map & a geolocation fencing system using Google Maps api, a dynamic form that can be used to generate reports which presented a lot of challenges and contained multiple types of inputs (text, numbers, images & files, toggles and check lists).`,
     tags: 'ReactNative;React-query;Formik;Typescript;Google Maps',
   },
 ];

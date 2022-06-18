@@ -28,8 +28,9 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
         onClick={() => setExpanded(undefined)}
       ></motion.div>
       <div className="flex w-full max-w-7xl flex-wrap justify-center gap-12 pt-20  ">
-        {PROJECTS.reverse().map((p, i) => (
+        {[...PROJECTS].reverse().map((p, i) => (
           <Project
+            key={p.title}
             {...p}
             isExpanded={i == expanded}
             onExpand={() => {

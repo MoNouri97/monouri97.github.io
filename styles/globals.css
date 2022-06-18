@@ -7,6 +7,7 @@
 * {
   /* transition: all .1s ease-in-out */
 }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 20px;
@@ -26,5 +27,13 @@ html {
   }
   .text-gray-500 em {
     @apply dark:text-white text-black not-italic;
+  }
+  .chatBtn {
+    box-shadow: -4px 0px ;
+    @apply shadow-green-400 transition-all;
+  }
+  .chatBtn:hover{
+    box-shadow: -4px 8px ;
+    @apply -translate-y-2
   }
 }
