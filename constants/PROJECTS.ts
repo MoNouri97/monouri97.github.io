@@ -19,7 +19,7 @@ const PROJECTS: ProjectData[] = [
     title: 'Movie Explorer',
     description: `This project was developed during my second internship that was done remotely at an British startup, the goal was to use the features of the Nextjs framework to create a platform to be used to browse through the latest movies. To that end we harvested the power of the free and open TMDB (the movie database) API and created a system that can retrieve, filter save and recommend movies with the help of curated movie lists that were loaded from the Sanity headless CMS.
 		During this project I was responsible for all the code as well as the testing, deployment and maintenance. the project was first deployed to vercel and later moved to netlify`,
-    tags: 'ReactJs;Nodejs;Nextjs;TMDB;API;typescript;Formik;SanityCMS;vercel;netlify;TDD;React-testing-library;Github actions CI/CD',
+    tags: 'ReactJs;Nodejs;Nextjs;TMDB;API;Typescript;Formik;SanityCMS;vercel;netlify;TDD;React-testing-library;Github actions CI/CD',
     links: [
       {
         path: 'https://github.com/MoNouri97/nextjs-movies',
@@ -50,7 +50,7 @@ const PROJECTS: ProjectData[] = [
     title: 'ISSAT Times : schedule App',
     description: `Students app for ISSATso university students to check their lectures and courses, coded using TS and ReactNative,
     due to missing API to interact with the time/schedule system the data is gathered using webscraping technique in the background when choosing your study group`,
-    tags: 'ReactNative;React-query;Formik;typescript;Google Maps',
+    tags: 'ReactNative;React-query;Formik;Typescript;Google Maps',
     links: [
       {
         path: 'https://github.com/MoNouri97/IssatTimes',
@@ -80,7 +80,7 @@ const PROJECTS: ProjectData[] = [
   {
     title: 'Merchandising: App & Dashboard',
     description: `The app was coded in typescript using React Native and featured a lot of intersting components such as a map & geolocation fencing system using Google Maps api and dynamic form that can be used to generate a report which presented a lot of challenges and contained multiple types of inputs (text, numbers, images & files, toggles and check lists).`,
-    tags: 'ReactNative;React-query;Formik;typescript;Google Maps',
+    tags: 'ReactNative;React-query;Formik;Typescript;Google Maps',
   },
 ];
 export default PROJECTS;

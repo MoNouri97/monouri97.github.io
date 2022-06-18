@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { FiArrowRight, FiCode, FiEye } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight, FiCode, FiEye } from 'react-icons/fi';
+import Tags from './Tags';
 
 export type ProjectData = {
   title: string;
@@ -44,28 +45,23 @@ const Project: React.FC<ProjectProps> = ({
             {title}
           </motion.h5>
         </motion.a>
-
         {!isExpanded ? (
-          <motion.p
-            layout="position"
-            className="mb-3  font-normal text-gray-800 dark:text-gray-400"
-          >
-            {description.slice(0, 50) + '...'}
-          </motion.p>
+          <>
+            <Tags data={tags} limit={3} />
+            <motion.p
+              layout="position"
+              className="mb-3  font-normal capitalize text-gray-800 dark:text-gray-400"
+            >
+              {description.slice(0, 50) + '...'}
+            </motion.p>
+          </>
         ) : (
           <>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p className="mb-3 font-normal capitalize text-gray-700 dark:text-gray-400">
               {description}
             </p>
             <div className="my-10 flex flex-col flex-wrap">
-              <div className="flex flex-wrap">
-                {tags.split(';').map(tag => (
-                  <span className="m-1 rounded bg-slate-300 p-2 text-sm dark:bg-darker">
-                    {tag.trim()}
-                  </span>
-                ))}
-              </div>
-
+              <Tags data={tags} />
               <div className="flex-centermt-5 flex-wrap justify-evenly">
                 {links.map(link => (
                   <div className="flex-center m-2 rounded bg-slate-300 p-2 text-indigo-500 dark:bg-darker">
@@ -85,7 +81,11 @@ const Project: React.FC<ProjectProps> = ({
           className="inline-flex max-w-md items-center rounded-lg bg-green-200 py-2 px-3 text-center text-sm font-medium text-dark  dark:bg-green-600  dark:text-white "
         >
           {isExpanded ? 'Read Less' : 'Read more'}
-          <FiArrowRight className="ml-2 -mr-1 h-4 w-4" />
+          {isExpanded ? (
+            <FiArrowLeft className="ml-2 -mr-1 h-4 w-4" />
+          ) : (
+            <FiArrowRight className="ml-2 -mr-1 h-4 w-4" />
+          )}
         </motion.button>
       </motion.div>
       {isExpanded && <div className="h-44 w-96 max-w-sm"></div>}
