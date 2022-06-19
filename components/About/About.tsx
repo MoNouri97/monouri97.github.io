@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import React from 'react';
-import { Parallax } from 'react-scroll-parallax';
 import AboutText from './AboutText';
+import Model from './Three/Model';
 
 type AboutProps = {};
 
@@ -32,10 +32,11 @@ const About: React.FC<AboutProps> = ({}) => {
         }}
         whileTap={{ cursor: 'grabbing' }}
       >
-        <Parallax speed={-10}>
+        <Model />
+        {/* <Parallax speed={-10}>
           <img src={'/img/BG.png'} className="pointer-events-none" />
-        </Parallax>
-        <motion.img
+        </Parallax> */}
+        {/* <motion.img
           style={{
             x,
             y,
@@ -43,9 +44,9 @@ const About: React.FC<AboutProps> = ({}) => {
             rotateY,
             z: 100000,
           }}
-          className="pointer-events-none absolute top-0 -left-10"
+          className="pointer-events-none absolute top-0 left-20 opacity-50"
           src={'/img/FG.png'}
-        />
+        /> */}
       </motion.div>
     </main>
   );
