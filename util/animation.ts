@@ -20,14 +20,32 @@ export const slideRight: Variants = {
     x: 100,
   },
 };
-export const popOut: Variants = {
+export const popOutRight: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
+    originX: 0,
+    originY: 0,
   },
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0.5,
+    originX: 0,
+    originY: 0,
+  },
+};
+export const popOutLeft: Variants = {
+  visible: {
+    opacity: 1,
+    scale: 1,
+    originX: 1,
+    originY: 0,
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0.5,
+    originX: 1,
+    originY: 0,
   },
 };
 export const list: Variants = {

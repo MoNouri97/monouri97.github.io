@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { FiCalendar } from 'react-icons/fi';
-import { slideLeft, slideRight } from '../../util/animation';
+import { popOutLeft, popOutRight } from '../../util/animation';
 
 export type TimelineEntryProps = {
   date: string;
@@ -23,11 +23,11 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
   const [hover, setHover] = useState(false);
   return (
     <motion.li
-      variants={!isRight ? slideLeft : slideRight}
+      variants={!isRight ? popOutLeft : popOutRight}
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 0.5 }}
-      viewport={{ amount: 0.7, once: true }}
+      transition={{ duration: 0.7, type: 'spring' }}
+      viewport={{ amount: 'all', once: true }}
     >
       <div
         className={`flex-end ${margin} lg:flex ${

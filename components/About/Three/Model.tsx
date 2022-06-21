@@ -129,7 +129,10 @@ const Model: React.FC<ModelProps> = () => {
   }, [renderer, handleWindowResize]);
 
   return (
-    <div ref={refContainer} style={{ width: 600, height: 600 }}>
+    <div
+      ref={refContainer}
+      style={{ width: 600, height: 600, maxWidth: '100vw' }}
+    >
       {loading && <p>loading</p>}
     </div>
   );

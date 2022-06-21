@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { useMotionValue, useTransform } from 'framer-motion';
 import React from 'react';
 import AboutText from './AboutText';
 import Model from './Three/Model';
@@ -17,37 +17,9 @@ const About: React.FC<AboutProps> = ({}) => {
       className="flex-center flex min-h-[100vh] w-full flex-wrap sm:py-10 sm:px-20"
     >
       <AboutText />
-      <motion.div
-        animate={{ x: 0, y: 0 }}
-        transition={{ type: 'spring' }}
-        className="relative w-[500px] cursor-grab"
-        style={{ x, y }}
-        drag
-        dragElastic={0.06}
-        dragConstraints={{
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-        whileTap={{ cursor: 'grabbing' }}
-      >
+      <div>
         <Model />
-        {/* <Parallax speed={-10}>
-          <img src={'/img/BG.png'} className="pointer-events-none" />
-        </Parallax> */}
-        {/* <motion.img
-          style={{
-            x,
-            y,
-            rotateX,
-            rotateY,
-            z: 100000,
-          }}
-          className="pointer-events-none absolute top-0 left-20 opacity-50"
-          src={'/img/FG.png'}
-        /> */}
-      </motion.div>
+      </div>
     </main>
   );
 };

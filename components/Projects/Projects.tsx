@@ -10,9 +10,9 @@ const Projects: React.FC<ProjectsProps> = ({}) => {
   const [expanded, setExpanded] = useState<number>();
   useEffect(() => {
     if (expanded !== undefined) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflowY = 'auto';
     }
   }, [expanded]);
   return (
