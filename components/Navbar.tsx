@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { FiGithub, FiMenu, FiX } from 'react-icons/fi';
 import { useOnScreen } from '../util/useOnScreen';
 import { useScrollPosition } from '../util/useScrollPosition';
 import DarkModeButton from './DarkModeButton';
@@ -27,19 +27,19 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
       links.map(l => ({ ...l, current: l.link === `#${isIntersecting}` }))
     );
   }, [isIntersecting]);
-
+  // improvements
   return (
     <Disclosure
       as="nav"
       className={`sticky top-0 z-[99] w-full duration-200 ${
-        isTop ? '' : 'bg-slate-300 shadow dark:bg-darker'
+        isTop ? '' : 'bg-slate-300/50 shadow backdrop-blur-md dark:bg-darker/50'
       }`}
     >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-[90rem] px-2 md:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
+              <div className="flex items-center md:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="dar:text-gray-400 inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               </div>
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <h1 className="-ml-16 font-cursive text-xl sm:ml-0">
+                  <h1 className="font-cursive text-xl sm:ml-0">
                     Nouri <span className="hidden sm:inline"> Mohamed </span>
                   </h1>
                 </div>
@@ -76,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+              <div className="flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <ul className="flex  items-center justify-end gap-2">
                   <IconButton
                     onClick={() =>
@@ -89,12 +89,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                     Get CV
                   </IconButton>
                   <IconButton
-                    icon={<FiMail size={20} />}
+                    icon={<FiGithub size={20} />}
                     onClick={() =>
-                      window.open(
-                        'mailto:mohamed.nouri.1997@gmail.com',
-                        '_blank'
-                      )
+                      window.open('https://github.com/MoNouri97', '_blank')
                     }
                   />
                   <DarkModeButton />
