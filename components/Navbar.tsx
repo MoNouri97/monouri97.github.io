@@ -20,6 +20,19 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     { label: 'Projects', link: '#projects' },
     { label: 'Contact', link: '#contact' },
   ]);
+
+  const [rightLinks, setRightLinks] = useState([
+    {
+      link: 'https://drive.google.com/file/d/1r0tZ1QITfDBF-7DsbyusX5dcod5WaaXv/view',
+      name: 'Get CV',
+    },
+    {
+      link: 'https://github.com/MoNouri97',
+      name: 'Github',
+      icon: <FiGithub size={20} />,
+    },
+  ]);
+
   const isTop = useScrollPosition();
   const isIntersecting = useOnScreen(links.map(l => l.link.slice(1)));
   useEffect(() => {
@@ -32,7 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
     <Disclosure
       as="nav"
       className={`sticky top-0 z-[99] w-full duration-200 ${
-        isTop ? '' : 'bg-slate-300/50 shadow backdrop-blur-md dark:bg-darker/50'
+        isTop
+          ? ''
+          : 'bg-slate-300 shadow backdrop-blur-md dark:bg-darker sm:bg-slate-300/50 sm:dark:bg-darker/50'
       }`}
     >
       {({ open }) => (
@@ -78,22 +93,16 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               </div>
               <div className="flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <ul className="flex  items-center justify-end gap-2">
-                  <IconButton
-                    onClick={() =>
-                      window.open(
-                        'https://drive.google.com/file/d/1r0tZ1QITfDBF-7DsbyusX5dcod5WaaXv/view',
-                        '_blank'
-                      )
-                    }
-                  >
-                    Get CV
-                  </IconButton>
-                  <IconButton
-                    icon={<FiGithub size={20} />}
-                    onClick={() =>
-                      window.open('https://github.com/MoNouri97', '_blank')
-                    }
-                  />
+                  <span className="hidden items-center gap-2 sm:flex">
+                    {rightLinks.map(({ link, icon, name }, i) => (
+                      <IconButton
+                        icon={icon}
+                        onClick={() => window.open(link, '_blank')}
+                      >
+                        {name}
+                      </IconButton>
+                    ))}
+                  </span>
                   <DarkModeButton />
                 </ul>
               </div>
@@ -114,6 +123,18 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.label}
+                </Disclosure.Button>
+              ))}
+              {rightLinks.map(item => (
+                <Disclosure.Button
+                  as="a"
+                  key={item.name}
+                  href={item.link}
+                  className={
+                    'block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white dark:text-gray-300'
+                  }
+                >
+                  {item.name}
                 </Disclosure.Button>
               ))}
             </div>
