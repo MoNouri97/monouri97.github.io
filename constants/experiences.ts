@@ -2,17 +2,21 @@ import { TimelineEntryProps } from '../components/Experience/TimelineEntry';
 
 export default [
   {
-    title: 'Dejamobile',
+    title: 'Joined Dejamobile',
     desc: `
     Dejamobile is a fintech and software publisher specializing in mobile payment services. 
     As a member of the backend team I helped in developing and managing SoftPOS tap to pay solution.
     Performed code reviews  code quality control to ensure optimal production results and built a distributed event streaming system using Kafka.
+    - Development of the web portal used by merchants & admins using Reactjs and was responsible for introducing TS support to the codebase .
+    - applied the micro-services architecture and used docker, Kubernetes and GitlabCI to build and deliver features.
+    - monitoring & tracing APIs using Jaeger .
+    - ensured optimal code quality using unit tests, SonarQube and code reviews.
     `,
-    details: `Reactjs; Golang; Gin; Gorm;TDD; MySQL; Kafka; Kubernetes; Helm`,
+    details: `Reactjs;Mui;TS; Golang; Gin; Gorm;TDD; MySQL; Kafka; Kubernetes; Helm`,
     date: 'Nov 2021',
   },
   {
-    title: 'EvoLux',
+    title: 'Joined EvoLux',
     desc: `EVOLUX - US is an aviation technology company with a portfolio of digital technology solutions that modernizes distribution of, and access to, aircraft availability for a variety of on-demand, private aviation end-users.
     Managing and maintaining a large Reactjs code base.
     EvoLux Web App: Private Aviation Marketplace/Booking System`,

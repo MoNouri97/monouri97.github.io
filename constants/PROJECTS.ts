@@ -81,6 +81,16 @@ const PROJECTS: ProjectData[] = [
     title: 'Merchandising: App & Dashboard',
     description: `The app was coded in typescript using React Native and featured a lot of intersting components such as a map & a geolocation fencing system using Google Maps api, a dynamic form that can be used to generate reports which presented a lot of challenges and contained multiple types of inputs (text, numbers, images & files, toggles and check lists).`,
     tags: 'ReactNative;React-query;Formik;Typescript;Google Maps',
+    links: [
+      {
+        path: 'https://github.com/MoNouri97/merch-team-app',
+        name: 'CODE Mobile app',
+      },
+      {
+        path: 'https://github.com/MoNouri97/merchandising-team-backend',
+        name: 'CODE Backend',
+      },
+    ],
   },
 ];
 export default PROJECTS;
