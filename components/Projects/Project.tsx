@@ -31,10 +31,10 @@ const Project: React.FC<ProjectProps> = ({
         onClick={!isExpanded ? onExpand : undefined}
         layout
         transition={{ type: 'spring', duration: 0.6 }}
-        className={` flex flex-col justify-between overflow-hidden rounded-lg bg-slate-200 p-8 dark:bg-dark ${
+        className={` flex flex-col justify-between rounded-lg bg-slate-200 p-8 dark:bg-dark ${
           isExpanded
             ? 'fixed top-0 bottom-0 z-[101] h-auto overflow-auto sm:bottom-[10vw] sm:top-[10vw]  lg:left-64 lg:right-64 '
-            : 'h-70 group max-w-sm cursor-pointer'
+            : 'h-70 group max-w-sm cursor-pointer overflow-hidden '
         } `}
       >
         <motion.a>

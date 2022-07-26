@@ -5,11 +5,11 @@ export const useOnScreen = (ids: string[], rootMargin: string = '0px') => {
   const [isIntersecting, setIntersecting] = useState<string>();
   const prev = useRef<string>();
   const updateState = (entry: IntersectionObserverEntry) => {
-    console.log({
-      is: entry.isIntersecting,
-      id: entry.target.id,
-      prev: prev.current,
-    });
+    // console.log({
+    //   is: entry.isIntersecting,
+    //   id: entry.target.id,
+    //   prev: prev.current,
+    // });
 
     if (entry.isIntersecting) {
       setIntersecting(isIntersecting => {

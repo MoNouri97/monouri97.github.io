@@ -96,6 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                   <span className="hidden items-center gap-2 sm:flex">
                     {rightLinks.map(({ link, icon, name }, i) => (
                       <IconButton
+                        key={name}
                         icon={icon}
                         onClick={() => window.open(link, '_blank')}
                       >

@@ -50,11 +50,16 @@ const TimelineEntry: React.FC<TimelineEntryProps> = ({
             </p>
           </div>
           {desc.split('.').map(parg => (
-            <p className="mb-6 text-gray-700 dark:text-gray-200">{parg}</p>
+            <p key={parg} className="mb-6 text-gray-700 dark:text-gray-200">
+              {parg}
+            </p>
           ))}
           <div className="flex flex-wrap">
             {details.split(';').map(dt => (
-              <span className="m-1 rounded bg-slate-300 p-2 text-sm dark:bg-darker">
+              <span
+                key={dt}
+                className="m-1 rounded bg-slate-300 p-2 text-sm dark:bg-darker"
+              >
                 {dt.trim()}
               </span>
             ))}
